@@ -1,0 +1,19 @@
+<button type="button" class="btn btn-primary" (click)="ShowModal(content)">New Task</button>
+<ng-template #content>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Task</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="dateOfBirth">Title</label>
+                <div class="input-group">
+                    <input name="title" class="form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success">Save</button>
+    </div>
+</ng-template>
