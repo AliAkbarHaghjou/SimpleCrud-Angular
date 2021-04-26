@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" (click)="ShowModal(content)">New Task</button>
+<button type="button" class="btn btn-success" (click)="ShowModal(content)">update</button>
 <ng-template #content>
     <form>
         <div class="modal-header">
@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" (click)="CreateTask()" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-success" (click)="update()">Save</button>
                 </div>
             </form>
         </div>

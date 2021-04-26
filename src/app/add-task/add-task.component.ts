@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TaskService } from '../services/task.service';
+import { Task } from '../interfaces/Task';
 
 @Component({
   selector: 'app-add-task',
@@ -7,9 +10,24 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent {
-  constructor(private modalService: NgbModal) {}
+  title = new FormControl('');
+  newTask: Task[] = [];
+
+  constructor(private modalService: NgbModal, private service: TaskService) {}
 
   ShowModal(content: any) {
     this.modalService.open(content);
+  }
+
+  CreateTask() {
+    let newpost: Task = {
+      id: 201,
+      userId: 1,
+      title: this.title.value,
+      completed: false,
+    };
+    this.service.Create(newpost);
+    this.title.setValue('');
+    this.modalService.dismissAll();
   }
 }

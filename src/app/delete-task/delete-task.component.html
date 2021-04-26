@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-danger" (click)="ShowModal(content)">Delete</button>
+<ng-template #content>
+    <form>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Are you sure to delete?</h4>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="dateOfBirth" style="font-weight: bold;">Title : </label>
+                    <div class="input-group">
+                        <label>{{ title}}</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="DeleteTask()" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </form>
+</ng-template>

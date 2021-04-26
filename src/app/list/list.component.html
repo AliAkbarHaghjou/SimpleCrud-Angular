@@ -13,7 +13,11 @@
                 <span *ngIf="task.completed === true ">IsCompleted</span>
                 <span *ngIf="task.completed === false ">NotCompleted</span>
             </td>
-            <td></td>
+            <td>
+                <app-update-task [currentTask]="task"></app-update-task>
+                &nbsp;
+                <app-delete-task [currentTask]="task"></app-delete-task>
+            </td>
         </tr>
     </tbody>
 </table>
